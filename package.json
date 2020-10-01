@@ -1,0 +1,9 @@
+{
+  "name": "node-algorithms",
+  "version": "1.0.0",
+  "description": "Data Structures & Algorithms written in TypeScript",
+  "main": "index.ts",
+  "repository": "git@github.com:namanattri/node-algorithms.git",
+  "author": "Naman Attri <namanattri5@gmail.com>",
+  "license": "MIT"
+}
