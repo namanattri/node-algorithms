@@ -47,7 +47,7 @@ console.log(jumpSearch([1, "books", 3, "cars"], 4)); // -1
 
 // using generics
 console.log(jumpSearch<number>([12, 21, 54, 55, 76], 54)); // 2
-console.log(jumpSearch<number>([1, 2, 4, 4, 7, 8, 12, 13, 19, 21, 23, 25, 30, 32, 35, 37, 54, 55, 76], 54));
-console.log(jumpSearch<number>([1, 2, 4, 4, 7, 8, 12, 13, 19, 21, 23, 25, 30, 32, 35, 37, 54, 55, 76], 4));
+console.log(jumpSearch<number>([1, 2, 4, 4, 7, 8, 12, 13, 19, 21, 23, 25, 30, 32, 35, 37, 54, 55, 76], 54)); // 16
+console.log(jumpSearch<number>([1, 2, 4, 4, 7, 8, 12, 13, 19, 21, 23, 25, 30, 32, 35, 37, 54, 55, 76], 4)); // 2
 console.log(jumpSearch<string>(["books", "cards", "clubs", "dairy"], "yolk")); // -1
 console.log(jumpSearch<string>(["books", "cards", "clubs", "dairy"], "cards")); // 1

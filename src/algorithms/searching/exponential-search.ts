@@ -50,6 +50,6 @@ console.log(exponentialSearch([1, 2, 3, 4], 4)); // 3
 console.log(exponentialSearch([1, "books", 3, "cars"], 4)); // -1
 
 // using generics
-console.log(exponentialSearch<number>([12, 21, 54, 55, 76], 54)); // 1
+console.log(exponentialSearch<number>([12, 21, 54, 55, 76], 54)); // 2
 console.log(exponentialSearch<string>(["books", "cards", "clubs", "dairy"], "yolk")); // -1
 console.log(exponentialSearch<string>(["books", "cards", "clubs", "dairy"], "cards")); // 1
