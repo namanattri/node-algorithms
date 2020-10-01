@@ -7,7 +7,7 @@
  *   clearly element doesn't exist in the array
  * if at any step search becomes less than element at currentStep then:
  *   jump to previous step and perform linear search until either search is found or the iteration has reached to the current step again
- * Time complexity: between O(n) and O(logn)
+ * Time complexity: between O(n) and O(logn) = O(n^(1/2)) where n^(1/2) is the optimal jump step
  * 
  * @param arr Haystack
  * @param search needle
