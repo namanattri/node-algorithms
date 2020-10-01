@@ -1,3 +1,15 @@
+/**
+ * ternarySearch
+ * 
+ * Find 2 mid points and slice array into 3 sub arrays (like 2 sub arrays in binary search)
+ * Timecomplexity: O(log3n) # binary search has O(log2n)
+ * 
+ * @param arr 
+ * @param startIndex 
+ * @param endIndex 
+ * @param search 
+ */
+
 export const ternarySearch = <T>(arr: T[], startIndex: number, endIndex: number, search: T) => {
   if(startIndex <= endIndex) {
     const mid1 = Math.ceil(startIndex + (endIndex - startIndex) / 3);
