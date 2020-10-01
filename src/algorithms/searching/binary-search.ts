@@ -1,5 +1,5 @@
 /**
- * splitSearch
+ * binarySearch
  * 
  * compare search with the middle element of the array
  * if matches return the middle index
@@ -13,7 +13,7 @@
  * @param search needle
  */
 
-const splitSearch = <T>(arr: T[], startIndex: number, endIndex: number, search: T): number => {
+const binarySearch = <T>(arr: T[], startIndex: number, endIndex: number, search: T): number => {
   
   // check if end >= start
   if(endIndex >= startIndex) {
@@ -25,10 +25,10 @@ const splitSearch = <T>(arr: T[], startIndex: number, endIndex: number, search: 
       return midIndex;
     } else if(search < arr[midIndex]) {
       // search in left half of the array
-      return splitSearch(arr, startIndex, midIndex - 1, search);
+      return binarySearch(arr, startIndex, midIndex - 1, search);
     } else {
       // search in the right half of the array
-      return splitSearch(arr, midIndex + 1, endIndex, search);
+      return binarySearch(arr, midIndex + 1, endIndex, search);
     }
   }
 
@@ -36,21 +36,16 @@ const splitSearch = <T>(arr: T[], startIndex: number, endIndex: number, search: 
 
 }
 
-/**
- * binarySearch
- * 
- * @param arr sorted haystack
- * @param search needle
- */
-export const binarySearch = <T>(arr: T[], search: T): number => {
-  return splitSearch(arr, 0, arr.length - 1, search);
-}
-
 // example usage
-console.log(binarySearch([1, 2, 3, 4], 4)); // 3
-console.log(binarySearch([1, "books", 3, "cars"], 4)); // -1
+const arr1 = [1, 2, 3, 4];
+console.log(binarySearch(arr1, 0, arr1.length - 1, 4)); // 3
+
+const arr2 = [1, "books", 3, "cars"];
+console.log(binarySearch(arr2, 0, arr2.length - 1, 4)); // -1
 
 // using generics
-console.log(binarySearch<number>([12, 21, 54, 55, 76], 54)); // 1
-console.log(binarySearch<string>(["books", "cards", "clubs", "dairy"], "yolk")); // -1
-console.log(binarySearch<string>(["books", "cards", "clubs", "dairy"], "cards")); // 0
+const arr3 = [12, 21, 54, 55, 76];
+console.log(binarySearch<number>(arr3, 0, arr3.length - 1, 54)); // 2
+const arr4 = ["books", "cards", "clubs", "dairy"];
+console.log(binarySearch<string>(arr4, 0, arr4.length - 1, "yolk")); // -1
+console.log(binarySearch<string>(arr4, 0, arr4.length - 1, "cards")); // 1

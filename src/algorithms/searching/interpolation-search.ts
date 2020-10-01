@@ -1,5 +1,5 @@
 /**
- * splitSearch
+ * interpolationSearch
  * 
  * given sorted array of uniformaly distributed values, it's a improvement over binary search 
  * where partition position is selected close to either start or end index 
@@ -14,7 +14,7 @@
  * @param search needle
  */
 
-const splitSearch = (arr: number[], startIndex: number, endIndex: number, search: number): number => {
+const interpolationSearch = (arr: number[], startIndex: number, endIndex: number, search: number): number => {
   
   // check if end >= start
   if(endIndex >= startIndex && search >= arr[startIndex] && search <= arr[endIndex]) {
@@ -26,10 +26,10 @@ const splitSearch = (arr: number[], startIndex: number, endIndex: number, search
       return pos;
     } else if(search < arr[pos]) {
       // search in left half of the array
-      return splitSearch(arr, startIndex, pos - 1, search);
+      return interpolationSearch(arr, startIndex, pos - 1, search);
     } else {
       // search in the right half of the array
-      return splitSearch(arr, pos + 1, endIndex, search);
+      return interpolationSearch(arr, pos + 1, endIndex, search);
     }
   }
 
@@ -37,23 +37,14 @@ const splitSearch = (arr: number[], startIndex: number, endIndex: number, search
 
 }
 
-/**
- * interpolationSearch
- * 
- * @param arr sorted haystack
- * @param search needle
- */
-export const interpolationSearch = (arr: number[], search: number): number => {
-  return splitSearch(arr, 0, arr.length - 1, search);
-}
-
+const arr5 = [1, 2, 3, 4];
 // example usage
-console.log(interpolationSearch([1, 2, 3, 4], 4)); // 3
+console.log(interpolationSearch(arr5, 0, arr5.length - 1, 4)); // 3
 
+const arr6 = [12, 21, 54, 55, 76];
 // using generics
-console.log(interpolationSearch([12, 21, 54, 55, 76], 54)); // 2
+console.log(interpolationSearch(arr6, 0, arr6.length - 1, 54)); // 2
 
+const arr7 = [10, 12, 13, 16, 18, 19, 20, 21, 22, 23, 24, 33, 35, 42, 47];
 // using generics
-console.log(interpolationSearch([10, 12, 13, 16, 18,  
-  19, 20, 21, 22, 23,  
-  24, 33, 35, 42, 47], 18)); // 4
+console.log(interpolationSearch(arr7, 0, arr7.length - 1, 18)); // 4
