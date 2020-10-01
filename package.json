@@ -5,5 +5,10 @@
   "main": "index.ts",
   "repository": "git@github.com:namanattri/node-algorithms.git",
   "author": "Naman Attri <namanattri5@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^9.0.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^4.0.3"
+  }
 }
