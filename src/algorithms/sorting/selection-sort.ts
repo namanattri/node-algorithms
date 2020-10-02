@@ -6,6 +6,7 @@
  * divide the array into sorted and unsorted sub array
  * start with the next unsorted sub array starting with index 1
  * repeat the swap process with minimum found until the sorted vs unsorted boundry reaches the end
+ * Time complexity: O(n^2) because of nested loops
  * 
  * @param arr 
  */
